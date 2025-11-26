@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <link rel="stylesheet" href="./reset.css" />
-    
+
     <link rel="preload" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
     <link rel="stylesheet"
@@ -28,6 +28,7 @@
             top: 0;
             left: 0;
             right: 0;
+            background-color: white;
         }
 
         main {
@@ -35,16 +36,16 @@
             margin-top: 4rem;
             margin: 4rem auto;
         }
-        
+
         .goods-heading {
             display: flex;
             justify-content: space-between;
-            align-items: center
+            align-items: center;
+            margin-bottom: 2rem;
         }
 
         h1 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
         }
 
         .goods-item-image {
@@ -60,9 +61,10 @@
         }
 
         .goods-item-title {
+            display: block;
             font-weight: 600;
             font-size: 1rem;
-            margin: 0.5rem 0rem;
+            margin: 0.25rem 0rem;
             padding-bottom: 4px;
         }
 
@@ -74,8 +76,7 @@
 
         .price {
             font-weight: 700;
-            font-size: 1rem;
-            margin: 0.5rem 0rem;
+            font-size: 1.125rem;
         }
 
         .price::after {
@@ -84,9 +85,54 @@
             margin-left: 0.25rem;
             font-weight: 500;
         }
+
         .goods-container {
             display: flex;
             justify-content: space-between;
+        }
+
+        .goods-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .banner-container {
+            margin-top: 5rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .ad-banner {
+            flex: 1;
+            padding: 1rem 3rem;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            font-weight: 700;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            box-sizing:border-box;
+        }
+        .ad-1 {
+                        background-color: #f3f3f3;
+
+        }
+        .ad-2 {
+                        background-color: #f3f3f3;
+
+        }
+        .ad-text::after {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('./images/chevron-right.svg');
+            background-size: contain;
+            margin-left: 0.5rem;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -95,58 +141,114 @@
     <header>OGQ마켓</header>
     <main>
         <div class="goods-heading">
-        <h1>인기 굿-즈</h1>
-        <a href="#"><img src="./images/chevron-right.svg" alt="더보기" style="width:24px;"></a>
+            <h1>인기 굿-즈</h1>
+            <a href="#"><img src="./images/chevron-right.svg" alt="더보기" style="width:24px;"></a>
         </div>
-        <div class="goods-container">
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
+        <div class="goods-list">
+            <div class="goods-container">
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-5.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-1.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-2.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-3.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-4.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
                 </div>
             </div>
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
+            <div class="goods-container">
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-5.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-1.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-2.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-3.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <a href="#"><img src="./images/space-4.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                    <div class="goods-item-info">
+                        <p class="goods-author">작가</p>
+                        <a href="#" class="goods-item-title">우주굿즈</a>
+                        <p class="price">29,700</p>
+                    </div>
                 </div>
             </div>
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
-                </div>
-            </div>
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
-                </div>
-            </div>
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
-                </div>
-            </div>
-            <div class="goods-item">
-                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
-                <div class="goods-item-info">
-                    <p class="goods-author">작가</p>
-                    <p class="goods-item-title">우주굿즈</p>
-                    <p class="price">29,700</p>
-                </div>
-            </div>
+        </div>
+        <div class="banner-container">
+        <a href="#" class="ad-banner ad-1"><p class="ad-text">무료 스티커 모음집</p></a>
+        <a href="#" class="ad-banner ad-2"><p class="ad-text">OGQ 크리에이터 스튜디오</p></a>
         </div>
     </main>
 </body>
