@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./reset.css" />
+    
+    <link rel="preload" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+
+    <style>
+        body {
+            font-family: 'Wanted Sans Variable';
+            padding: 2rem;
+        }
+
+        header {
+            font-weight: 700;
+            font-size: 1.75rem;
+            box-shadow: 0 6px 12px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        main {
+            max-width: 1280px;
+            margin-top: 4rem;
+            margin: 4rem auto;
+        }
+        
+        .goods-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .goods-item-image {
+            width: 194px;
+            height: 194px;
+            object-fit: cover;
+            border: solid 1px;
+            border-color: oklch(84.213% 0.0088 197.59);
+        }
+
+        .goods-item-info {
+            margin: 1rem 0rem 0.5rem;
+        }
+
+        .goods-item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0.5rem 0rem;
+            padding-bottom: 4px;
+        }
+
+        .goods-author {
+            font-size: 0.75rem;
+            margin: 0;
+            color: oklch(61.334% 0.00478 197.837);
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0.5rem 0rem;
+        }
+
+        .price::after {
+            content: "원";
+            font-size: 0.75rem;
+            margin-left: 0.25rem;
+            font-weight: 500;
+        }
+        .goods-container {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <header>OGQ마켓</header>
+    <main>
+        <div class="goods-heading">
+        <h1>인기 굿-즈</h1>
+        <a href="#"><img src="./images/chevron-right.svg" alt="더보기" style="width:24px;"></a>
+        </div>
+        <div class="goods-container">
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <a href="#"><img src="./images/space.jpg" alt="우주굿즈1" class="goods-item-image"></a>
+                <div class="goods-item-info">
+                    <p class="goods-author">작가</p>
+                    <p class="goods-item-title">우주굿즈</p>
+                    <p class="price">29,700</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
