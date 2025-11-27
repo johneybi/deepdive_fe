@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipmoticon</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --neon-pink: #ff00ff;
+            --neon-cyan: #00ffff;
+            --bg-dark: #0a0a0a;
+            --bg-panel: #111;
+            --text-main: #f6f6f6;
+            --text-gray: #acacac;
+        }
+
+        @font-face {
+            font-family: 'BoldRound';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/BoldDungGeunMo.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24ProUp';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2507-1@1.0/Cafe24PROUP.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            background-color: var(--bg-dark);
+            color: #333;
+            line-height: 1.5;
+            min-height: 150vh;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: var(--bg-panel);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--neon-pink),
+                0 2px 2px var(--neon-cyan);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 6rem;
+        }
+
+        .logo {
+            font-family: 'Cafe24ProUp';
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--neon-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-shadow:
+                2px 2px 0px #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 10px var(--neon-green);
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid var(--neon-cyan);
+            background-color: var(--bg-panel);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            /* box-shadow: 3px 3px 0px var(--neon-pink); */
+            box-sizing: border-box;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--neon-green);
+        }
+
+        .search-bar::after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-image: url('./images/search-alt.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--neon-cyan);
+        }
+
+        .nav-link.active {
+            color: var(--neon-green);
+        }
+
+        .login-btn {
+            color: var(--text-main);
+            padding: 8px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            border: 2px solid var(--neon-pink);
+            box-shadow: inset 0 0 10px var(--neon-pink), 3px 3px 0px var(--neon-cyan);
+            transition: ease 400ms;
+        }
+
+        .login-btn:hover {
+            background-color: var(--neon-pink);
+            color: var(--bg-dark);
+            font-weight: 900;
+        }
+
+        .hero {
+            padding-top: 80px;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #10101d 0%, #280128 100%);
+            z-index: -2;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-title {
+            font-family: 'Cafe24ProUp';
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-shadow: 2px 2px 0px var(--neon-pink);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            position: relative;
+            display: inline-block;
+            background-color: transparent;
+            overflow: hidden;
+            font-family: BoldRound;
+            color: var(--text-main);
+            padding: 15px 30px;
+            border: 4px solid var(--neon-green);
+            border-radius: 30px;
+            font-size: 18px;
+            box-shadow: 0 0 10px var(--neon-green), inset 0 0 10px var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--neon-green), inset 0 0 10px var(--neon-green);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--neon-green);
+            opacity: 0.2;
+            transform: skewX(-20deg);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+        .card {
+            width: 500px;
+            height: 500px;
+            background-image: url(./images/dopamine.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 28px;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 32px;
+            background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+            z-index: -1;
+            pointer-events: none;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            scale: 105%;
+            inset: 0;
+            background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+            transform: translate3d(0, 0, 0) scale(0.95);
+            filter: blur(20px);
+            transition: ease 0.8s;
+            opacity: 0.8;
+        }
+
+        .card:hover::after {
+            filter: blur(30px);
+            opacity: 1;
+        }
+
+        .card:hover::before {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>😎</span> Hipmoticon
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="힙한 감성 찾기">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">홈</a>
+                <a href="#" class="nav-link">인기</a>
+                <a href="#" class="nav-link">신규</a>
+                <button class="login-btn">로그인</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    당신의 대화에<br>
+                    <span style="color:var(--neon-green);">힙한 감성</span>을 심어보세요!
+                </h1>
+                <p class="hero-subtitle">
+                    매일매일 새로운 작가님들의<br>
+                    반짝이는 아이디어를 만나보세요.
+                </p>
+                <a href="#" class="cta-button">인기 이모티콘 보러가기</a>
+            </div>
+
+            <div class="hero-image">
+                <div class="card">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
