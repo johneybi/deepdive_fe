@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="./reset.css" />
+    <base href="https://johneybi.github.io/deepdive_fe/">
+    <link rel="stylesheet" href="./css/reset.css" />
 
     <link rel="preload" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
@@ -30,6 +30,15 @@
             right: 0;
             background-color: white;
             z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-nav {
+            max-width: 1400px;
+            min-width: 1280px;
+            color: oklch(75.121% 0.23894 142.283);
         }
 
         main {
@@ -168,7 +177,9 @@
 </head>
 
 <body>
-    <header>OGQ마켓</header>
+    <header>
+        <div class="top-nav">OGQ마켓</div>
+    </header>
     <main>
         <div class="goods-heading">
             <h1>인기 굿-즈</h1>

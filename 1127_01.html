@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preload" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+    <style>
+        body {
+            background-color: #f3f4f5;
+            font-family: 'Wanted Sans Variable';
+        }
+
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 20px;
+            line-height: 2;
+            margin: 50px auto;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .btn-container {
+            position: fixed;
+            bottom: 24px;
+            left: calc(50% + 250px + 36px);
+        }
+
+        .btn-left {
+            position: absolute;
+            top: calc(50% - 29px);
+            left: -40px;
+        }
+        .btn-left2 {
+            position: absolute;
+            top: calc(50% - 29px);
+            left: -30px;
+        }
+
+        .btn-right {
+            position: absolute;
+            top: calc(50% - 29px);
+            right: -40px;
+        }
+
+        .btn-center {
+            position: absolute;
+            top: calc(50% - 29px);
+            right: calc(50% - 29px);
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            margin: 12px;
+            border: 1px solid #333;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px #dadcdf, 0 4px 8px 0 rgba(0, 0, 0, .15);
+            color: #010101;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #f3f3f3;
+            box-shadow: 0 0 0 1px #dadcdf, 0 6px 8px 0 rgba(0, 0, 0, .3);
+        }
+
+        .btn:active {
+            background-color: #03c75a;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae exercitationem sapiente possimus totam unde
+            nihil
+            quae vel voluptate, in autem illo eveniet deserunt quos enim! Molestias consectetur odit qui minus.
+            Consectetur assumenda vero deserunt, vitae tempore dolor officia dolorem odit eum velit deleniti iusto
+            delectus
+            iure
+            voluptatem similique ea fugiat voluptas quidem itaque sapiente suscipit repellat? Nesciunt temporibus
+            recusandae
+            deserunt.
+        </p>
+        <!-- <p> Voluptatem unde dignissimos ex provident, maxime libero fuga eligendi placeat, ipsum ipsa beatae, tempora
+            tenetur
+            tempore reprehenderit. Omnis similique optio voluptatibus doloremque voluptates sunt odio eos magnam.
+            Exercitationem, rem minus?
+        </p>
+        <p> Quas officiis, eos ex molestiae tempore itaque at. Voluptatibus saepe nesciunt voluptate illum alias odit.
+            Ea
+            nesciunt dolor consequuntur, vitae earum reiciendis ipsa assumenda modi in, incidunt fugit laboriosam
+            ratione?
+            Voluptas dolore illo, nemo laborum fugiat eveniet distinctio, natus quidem quasi ut architecto tenetur
+            nostrum
+            alias
+            est corrupti aut esse sequi voluptate. Earum harum, iusto quos aspernatur at debitis quisquam.
+        </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae exercitationem sapiente possimus totam unde
+            nihil
+            quae vel voluptate, in autem illo eveniet deserunt quos enim! Molestias consectetur odit qui minus.
+            Consectetur assumenda vero deserunt, vitae tempore dolor officia dolorem odit eum velit deleniti iusto
+            delectus
+            iure
+            voluptatem similique ea fugiat voluptas quidem itaque sapiente suscipit repellat? Nesciunt temporibus
+            recusandae
+            deserunt.
+        </p>
+        <p> Voluptatem unde dignissimos ex provident, maxime libero fuga eligendi placeat, ipsum ipsa beatae, tempora
+            tenetur
+            tempore reprehenderit. Omnis similique optio voluptatibus doloremque voluptates sunt odio eos magnam.
+            Exercitationem, rem minus?
+        </p>
+        <p> Quas officiis, eos ex molestiae tempore itaque at. Voluptatibus saepe nesciunt voluptate illum alias odit.
+            Ea
+            nesciunt dolor consequuntur, vitae earum reiciendis ipsa assumenda modi in, incidunt fugit laboriosam
+            ratione?
+            Voluptas dolore illo, nemo laborum fugiat eveniet distinctio, natus quidem quasi ut architecto tenetur
+            nostrum
+            alias
+            est corrupti aut esse sequi voluptate. Earum harum, iusto quos aspernatur at debitis quisquam.
+        </p> -->
+
+        <button type="button" class="btn btn-left">LEFT</button>
+        <button type="button" class="btn btn-right">RIGHT</button>
+        <button type="button" class="btn btn-center">MID</button>
+        <button type="button" class="btn btn-left2">LEFT2</button>
+    </div>
+
+    <div class="btn-container">
+        <a href="#" class="btn btn-top">
+            <!-- <svg class="btn-icon" width="100%" height="100%" viewBox="0 0 24 24" fill="#000000"
+                xmlns="http://www.w3.org/2000/svg" style="width:24px; height:24px;">
+                <path d="M21 3H3M12 21V7M12 7L5 14M12 7L19 14" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg> -->
+            <span class="">TOP</span>
+        </a>
+    </div>
+
+
+</body>
+
+</html>
