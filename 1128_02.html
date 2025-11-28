@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            outline: 1px solid red;
+            display: grid;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: 100px 200px; */
+            grid-auto-rows: minmax (100px, auto);
+            grid-gap: 16px;
+        }
+
+        div {
+            background-color: aqua;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid</h1>
+    <section class="container">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit exercitationem rerum eveniet dolorem vel delectus nostrum quia odio reiciendis laudantium, modi eos officiis quis excepturi. Quidem exercitationem asperiores veniam soluta?</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+    </div>
+</body>
+</html>
