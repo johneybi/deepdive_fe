@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: oklch(31.259% 0.01766 172.936);
+            color: oklch(92.494% 0.00011 271.152);
+        }
+
+        .container {
+            margin: 0 32px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 250px;
+            grid-gap: 16px;
+            grid-auto-flow: dense;
+        }
+
+        .gallery-container li {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .gallery-container .wide {
+            grid-column: span 2;
+        }
+
+        .gallery-container .tall {
+            grid-row: span 2;
+        }
+
+        .gallery-container .big {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media all and (max-width:680px) {
+            .gallery-container .big,
+            .gallery-container .wide,
+            .gallery-container .tall {
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="container">Grid Gallery</h1>
+    <ul class="gallery-container container">
+        <li><img src="https://picsum.photos/id/3/500" alt=""></li>
+        <li class="tall"><img src="https://picsum.photos/id/100/500" alt=""></li>
+        <li class="wide"><img src="https://picsum.photos/id/2/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/1/500" alt=""></li>
+        <li class="big"><img src="https://picsum.photos/id/20/500" alt=""></li>
+        <li class="tall"><img src="https://picsum.photos/id/21/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/13/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/8/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/22/500" alt=""></li>
+        <li class="wide"><img src="https://picsum.photos/id/30/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/42/500" alt=""></li>
+        <li><img src="https://picsum.photos/id/52/500" alt=""></li>
+    </ul>
+</body>
+
+</html>
