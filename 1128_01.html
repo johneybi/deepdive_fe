@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/font.css" />
-<style>
-    body {
-        font-family: 'Pretendard', sans-serif;
-        font-size: 14px;
-        line-height: 1.2;
-    }
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 14px;
+            line-height: 1.2;
+        }
 
-    .topic-container {
-        display: flex;
-        max-width: 900px;
-        width: 100%;
-        margin: 30px auto;
-        gap: 20px;
-    }
+        .topic-container {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            margin: 30px auto;
+            gap: 20px;
+            overflow: hidden;
+            justify-content: space-between;
+        }
 
-    .topic-container li {
-        height: 250px;
-        width: 250px;
-    }
-    
-    .topic-container li img {
-        width:100%;
-        height:100%;
-        object-fit: cover;
-    }
-</style>
+        .topic-container li {
+            position: relative;
+            height: 250px;
+            width: 250px;
+            /* outline: 1px solid red; */
+        }
+
+        .topic-container li:hover .description {
+            bottom: 0px;
+        }
+
+        .topic-container li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .description {
+            position: absolute;
+            bottom: -52px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 1.5em;
+            text-align: center;
+            transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s;
+        }
+
+        .description h3 {
+            color: gold;
+            margin-bottom: 28px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>
         <a href="#">BLOG</a>
@@ -68,4 +93,5 @@
         </li>
     </ul>
 </body>
+
 </html>
