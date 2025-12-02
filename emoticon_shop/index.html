@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipmoticon</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <base href="https://johneybi.github.io/deepdive_fe/"> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>😎</span> Hipmoticon
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="힙한 감성 찾기">
+            </div>
+
+            <div class="header-right">
+                <button class="search-toggle-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+
+                <button class="hamburger-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+
+                <div class="mobile-menu-container">
+                    <button class="close-menu-btn">&times;</button>
+                    
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-link active">홈</a>
+                        <a href="#" class="nav-link">인기</a>
+                        <a href="#" class="nav-link">신규</a>
+                        <button class="login-btn">로그인</button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    당신의 대화에<br>
+                    <span style="color:var(--neon-green);">힙한 감성</span>을 심어보세요!
+                </h1>
+                <p class="hero-subtitle">
+                    매일매일 새로운 작가님들의<br>
+                    반짝이는 아이디어를 만나보세요.
+                </p>
+                <a href="#" class="cta-button">인기 이모티콘 보러가기</a>
+            </div>
+
+            <div class="hero-image">
+                <div class="card">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="categories container">
+            <h2>추천 이모티콘</h2>
+            <div class="category-list">
+                <button class="category-btn active" data-category="all">전체</button>
+                <button class="category-btn" data-category="cute">귀여운</button>
+                <button class="category-btn" data-category="funny">재밌는</button>
+                <button class="category-btn" data-category="work">직장인</button>
+                <button class="category-btn" data-category="retro">레트로</button>
+                <button class="category-btn" data-category="cool">힙한</button>
+            </div>
+        </section>
+
+        <section class="recommended container">
+            <div class="emoticon-grid" id="emoticonGrid">
+               
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-logo">
+                <span>😎</span> Hipmoticon
+            </div>
+            <p class="copyright">© 2025 Hipmoticon. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="social-icon icon-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="social-icon icon-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="social-icon icon-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="login-header">
+                <h2>환영합니다</h2>
+                <p>힙스터들의 이모티콘 세상을 만나보세요</p>
+            </div>
+
+            <form class="login-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" placeholder="example@hipmoticon.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+                </div>
+
+                <button type="submit" class="submit-btn">로그인</button>
+            </form>
+
+            <div class="login-links">
+                <a href="#">비밀번호 찾기</a>
+                <span class="divider">|</span>
+                <a href="#">회원가입</a>
+            </div>
+
+            <div class="sns-login">
+                <p class="sns-text">SNS 계정으로 로그인</p>
+                <div class="sns-buttons">
+                    <button class="sns-btn kakao" aria-label="Kakao Login">
+                        <img src="./images/kakao.svg" alt="Kakao Login" width="20" height="20">
+                    </button>
+                    <button class="sns-btn google" aria-label="Google Login">
+                        <img src="./images/google.svg" alt="Google Login" width="20" height="20">
+                    </button>
+                    <button class="sns-btn twitter" aria-label="Twitter Login">
+                        <img src="./images/twitter.svg" alt="Twitter Login" width="20" height="20">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-overlay"></div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
