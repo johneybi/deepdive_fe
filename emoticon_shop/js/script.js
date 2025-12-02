@@ -113,21 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // 필터링 로직 (카테고리 & 검색어)
+  // 필터링 로직 (카테고리)
   const filterEmoticons = () => {
     let filtered = allEmoticons;
 
     // 카테고리별 필터
     if (currentCategory !== "all") {
       filtered = filtered.filter((item) => item.category === currentCategory);
-    }
-
-    // 검색어 필터
-    if (searchTerm) {
-      filtered = filtered.filter(
-        (item) =>
-          item.title.includes(searchTerm) || item.author.includes(searchTerm)
-      );
     }
 
     renderEmoticons(filtered);
@@ -182,17 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
       filterEmoticons();
     });
   });
-
-  // 실시간 검색 필터링
-  if (searchBar) {
-    const input = searchBar.querySelector("input");
-    if (input) {
-      input.addEventListener("input", (e) => {
-        searchTerm = e.target.value;
-        filterEmoticons();
-      });
-    }
-  }
 
   // 상세 페이지
   const detailContainer = document.getElementById("detailContainer");
