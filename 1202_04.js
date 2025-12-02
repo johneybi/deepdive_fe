@@ -21,3 +21,21 @@ console.log("friends : ", friends)
 
 const newFriend = { ...friends, age: 1000}
 console.log(newFriend)
+
+
+const students = [
+  { name: "Alice", score: 75 },
+  { name: "Bob", score: 90 },
+  { name: "Charlie", score: 85 },
+];
+
+// 시험점수가 80점 이상인 학생들을 추출해서 명단을 만들어 주세요.
+// 명단 변수 : passedUsers
+// 이름만 추출할 것
+
+
+const passedUsers = students
+  .filter((student) => student.score >= 80)
+  .map((student) => student.name);
+
+console.log(passedUsers);
