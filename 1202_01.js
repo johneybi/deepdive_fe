@@ -31,3 +31,8 @@ console.log(numbers)
 numbers.sort((a, b) => b - a)
 console.log(numbers)
 
+const myfruits = "apple,banana,mango"
+const myArray = myfruits.split(",")
+console.log(myArray)
+
+console.log(myArray.join("-"))
