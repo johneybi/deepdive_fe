@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+        <div class="flex items-center gap-4">
+            <input type="text" id="task" placeholder="task를 입력하세요"
+                class="flex-grow w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300">
+            <button type="button" id="addTask"
+                class="px-6 py-2 text-white font-semibold bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition-all duration-300">
+                ADD+
+            </button>
+        </div>
+        <h1 class="mt-6 text-2xl font-semibold text-gray-700">My Tasks</h1>
+        <ul id="task-container">
+
+        </ul>
+    </div>
+    <script>
+        const container = document.getElementById("task-container");
+        const input = document.getElementById("task");
+        const btnAdd = document.getElementById("addTask");
+        let tasklist = []
+
+        btnAdd.addEventListener("click", () => {
+            if (input.value === "") return;
+
+            tasklist = [...tasklist, input.value]
+            
+            container.innerHTML = ""
+            
+            tasklist.forEach(function(tasktext) {
+            const li = document.createElement("li");
+            li.textContent = tasktext;
+            li.className = "px-4 py-2 mt-4 bg-gray-50 rounded-lg";
+            container.appendChild(li);
+            })
+            
+            input.value = ""
+            input.focus()
+        })
+
+    </script>
+</body>
+
+</html>
