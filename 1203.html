@@ -30,22 +30,25 @@
         let tasklist = []
 
         btnAdd.addEventListener("click", () => {
-            if (input.value === "") return;
+            if (input.value.trim() === "") return;
 
-            tasklist = [...tasklist, input.value]
-            
-            container.innerHTML = ""
-            
-            tasklist.forEach(function(tasktext) {
-            const li = document.createElement("li");
-            li.textContent = tasktext;
-            li.className = "px-4 py-2 mt-4 bg-gray-50 rounded-lg";
-            container.appendChild(li);
-            })
-            
+            tasklist = [...tasklist, input.value.trim()]
+
+            renderTask()
+                        
             input.value = ""
             input.focus()
         })
+
+        function renderTask() {
+            container.innerHTML = ""
+            tasklist.forEach(function(task) {
+            const li = document.createElement("li");
+            li.textContent = task;
+            li.className = "px-4 py-2 mt-4 bg-gray-50 rounded-lg";
+            container.appendChild(li);
+            })
+        }
 
     </script>
 </body>
