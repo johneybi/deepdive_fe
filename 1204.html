@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <div class="flex flex-col">
+        <h1 id="title" class="font-bold text-xl mb-4">Hello world</h1>
+        <div class="grid w-full max-w-sm items-center gap-1.5">
+            <div class="flex w-full items-center space-x-2">
+                <input type="text" id="input"
+                    class="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300"
+                    placeholder="텍스트를 입력하세요">
+                <button type="button" id="btn"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-10 px-4 py-2 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90">ADD</button>
+            </div>
+            <p id="msg" class="bg-white mt-4 p-2 rounded-md text-sm text-slate-500 dark:text-slate-400">텍스트가 여기에 표시됩니다</p>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById("input");
+        const btn = document.getElementById("btn");
+        const msg = document.getElementById("msg");
+
+        btn.addEventListener("click", renderMsg)
+
+        function renderMsg() {
+            msg.textContent = input.value;
+            input.value = "";
+            input.focus();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="flex flex-col items-center justify-center h-screen bg-gray-200">
+    <div class="flex items-center space-x-4">
+        <div class="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-input bg-transparent">
+            <input type="color" id="select-color" class="h-10 w-10 p-1 cursor-pointer rounded-sm p-0" title="색상 선택">
+        </div>
+        <button type="button" id="btn"
+            class="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 ring-offset-white transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2">컬러값
+            출력</button>
+    </div>
+    <p id="msg" class="hidden mt-4 min-h-[24px] text-gray-900 text-lg bg-white px-4 py-2 rounded-md"></p>
+    <script>
+        const color = document.getElementById("select-color");
+        const btn = document.getElementById("btn");
+        const msg = document.getElementById("msg");
+        const body = document.body;
+
+
+        btn.addEventListener("click", renderMsg)
+        color.addEventListener("change", changeColor)
+        
+        
+        function renderMsg() {
+            msg.textContent = color.value;
+            msg.classList.remove("hidden");
+        }
+
+        function changeColor() {
+            body.style.backgroundColor = color.value;
+        }
+    </script>
+
+
+</body>
+
+</html>
