@@ -75,3 +75,28 @@ function greetAfterDelay(name, seconds) {
 }
 
 greetAfterDelay("딥다이브", 2);
+
+// setInterval(
+//     (msg) => {
+//         console.log(msg);
+//     },
+//     2000,
+//     "Tick Tock"
+// )
+
+// setInterval(() => {
+//     const now = new Date();
+//     console.log(now.toLocaleTimeString());
+// }, 1000)
+
+
+// const timerId = setInterval(() => console.log("tick"), 1000)
+
+// setTimeout(() =>clearInterval(timerId), 5000)
+
+let count = 0
+
+setInterval(() => {
+    count++
+    console.log(`${count}초 지났습니다.`)}
+    , 1000)
