@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #box {
+            border: 1px solid #444;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center flex-col p-4">
+    <main class="text-center">
+        <h1 class="text-4xl font-bold text-white tracking-tight mb-2">
+            Color Changing Box
+        </h1>
+    <div id="box" class="mt-4 w-80 h-80 rounded-2xl shadow-2xl 
+                            transition-all duration-500 ease-in-out
+                            hover:scale-105 hover:shadow-sky-400/30"></div>
+        <button id="start" class="mt-6 px-6 py-2 font-semibold text-white bg-blue-600 rounded-lg shadow-md
+                                 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75
+                                 transition-colors duration-200">
+            Start
+        </button>
+        <button id="stop" class="mt-6 ml-2 px-6 py-2 font-semibold text-white bg-red-600 rounded-lg shadow-md
+                                hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75
+                                transition-colors duration-200">
+            Stop
+        </button>
+    </main>
+    <script>
+        const box = document.getElementById("box");
+        const startBtn = document.getElementById("start");
+        const stopBtn = document.getElementById("stop");
+        let colored = false;
+        let timerId = null;
+        
+
+        function toggleColor() {
+            box.style.backgroundColor = colored ? 'gold' : 'olive'
+            colored = !colored
+        }    
+        startBtn.addEventListener("click", () => {
+            if(timerId!==null) {
+                console.log('타이머가 이미 실행중입니다')
+                return;
+            }
+            timerId=setInterval(toggleColor, 1000)
+        })
+        stopBtn.addEventListener("click", () => {
+            clearInterval(timerId)
+            timerId = null
+        })
+        </script>
+</body>
+</html>
