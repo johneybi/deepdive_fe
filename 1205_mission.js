@@ -51,11 +51,11 @@ console.log(`${year}-${month}-${date}`)
 // 8. 아래의 가격에 세금을 포함한 금액으로 새로운 배열을 만드시오.
 const prices = [100, 200, 300];
 // 결과 priceWithTax = [ 110, 220, 330]
-function priceWithTax {
 
-    
+function priceWithTax(prices) {
+    return prices.map(price => Math.round(price * 1.1));
 }
-
+console.log(priceWithTax(prices));
 
 
 // 9. 아래 User중에서 결석(absent:true면 결석) 한적이 없고, 점수가 70점 이상인 user만 추출하시오.
@@ -65,10 +65,30 @@ const users = [
 { name: "shoopa", score: 80, absent: false },
 { name: "nuvis", score: 52, absent: false },
 { name: "camel", score: 75, absent: false },
-];// 10. 아래의 Cart의 모든 상품에 대해 총 합계 금액을 계산하시오(단, 재고가 10개 미만인 제품은 20% 할인을 적용하세요
+];
+
+const qualifiedUsers = users.filter(user => !user.absent && user.score >= 70);
+console.log(qualifiedUsers);
+
+
+// 10. 아래의 Cart의 모든 상품에 대해 총 합계 금액을 계산하시오(단, 재고가 10개 미만인 제품은 20% 할인을 적용하세요
 const cart = [
 { menu: "latte", price: 3000, quantity: 1, stock: 15 },
 { menu: "capuchino", price: 4500, quantity: 2, stock: 5 },
 { menu: "Iced Americano", price: 2500, quantity: 1, stock: 8 },
 { menu: "Orange Ade", price: 3200, quantity: 2, stock: 20 },
 ];
+
+const totalPrice = cart.reduce((total, item) => {
+    // .reduce((누적값, 현재요소) => { ... }, 초기값)
+    // total: 지금까지 계산된 누적 금액 (처음엔 0부터 시작)
+    // item: 현재 처리중인 장바구니 상품 (latte → capuchino → ... 순서대로)
+    let itemPrice = item.price * item.quantity;
+    if (item.stock < 10) {
+        itemPrice = itemPrice * 0.8;
+    }
+    
+    return total + itemPrice;
+}, 0);
+
+console.log(totalPrice); 
