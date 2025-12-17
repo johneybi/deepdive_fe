@@ -77,7 +77,7 @@ function App() {
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className="flex items-start space-x-3 p-4 border-b border-gray-200"
+            className="flex items-start space-x-3 py-4 border-b border-gray-200"
           >
             <Avatar src={comment.avatar} />
             <div className="flex-1">

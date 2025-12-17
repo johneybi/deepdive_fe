@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Local Storage연습</h1>
+    <script>
+        const todos = [
+            {id:1, task: 'walk', isDone: false},
+            {id:2, task: 'study', isDone: true}
+        ]
+        const user = { name: 'Ghost', age: 500}
+
+        localStorage.setItem('todos', JSON.stringify(todos))
+        localStorage.setItem('user', JSON.stringify(user))
+
+        const storageTodos = JSON.parse(localStorage.getItem('todos'))
+        console.log(storageTodos[0].id)
+    </script>
+</body>
+</html>
